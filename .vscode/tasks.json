@@ -4,14 +4,10 @@
         {
             "label": "build and run C++",
             "type": "shell",
-            "command": "/opt/homebrew/bin/g++-15",
+            "command": "bash",
             "args": [
-                "-std=c++17",
-                "-Wall",
-                "-g", // enables debugging symbols
-                "${file}",
-                "-o",
-                "${workspaceFolder}/output/${fileBasenameNoExtension}"
+                "-c",
+                "mkdir -p '${workspaceFolder}/output' && /opt/homebrew/bin/g++-15 -std=c++17 -Wall -g '${file}' -o '${workspaceFolder}/output/${fileBasenameNoExtension}' && '${workspaceFolder}/output/${fileBasenameNoExtension}'"
             ],
             "group": {
                 "kind": "build",
@@ -20,29 +16,14 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "detail": "Compiles the active C++ file using g++-15",
+            "detail": "Compiles and runs the active C++ file using g++-15",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
-                "focus": false,
-                "panel": "shared", // uses same terminal for all runs
+                "focus": true,
+                "panel": "shared",
                 "showReuseMessage": true,
                 "clear": false
-            }
-        },
-        {
-            "label": "run executable",
-            "type": "shell",
-            "command": "${workspaceFolder}/output/${fileBasenameNoExtension}",
-            "dependsOn": [
-                "build and run C++"
-            ],
-            "group": "none",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "panel": "shared", // same terminal
-                "focus": true
             }
         }
     ]
