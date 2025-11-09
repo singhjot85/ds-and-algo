@@ -1,0 +1,5 @@
+To do:
+    - Add docker configuration for this project, 
+    - Install c++ andd all the dependencies on your image, 
+    - Write your algos in a structure so that they can be used from a common file, 
+    - Generalize the algos in common packages, if possible try to devlop a package for those algos, 
