@@ -2,7 +2,7 @@
     "terminal.integrated.allowChords": false,
     "terminal.integrated.defaultProfile.osx": "bash",
     "files.exclude": { 
-        "**/*.dSYM": false,
-        "**/compilerOutputs": false,
+        "**/*.dSYM": true,
+        "**/compilerOutputs": true,
     }
 }
